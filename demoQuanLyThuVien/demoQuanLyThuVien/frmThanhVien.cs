@@ -19,54 +19,7 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
-        
-        //public frmThanhVien(ThanhVien thanhvien)
-        //{
-            
-        //    thanhvien = tv;
-        //}
-
-        private void btnTroVe_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TrangChu tc = new TrangChu();
-            tc.ShowDialog();
-        }
-
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            ThanhVien tv = db.ThanhVien.Find(txtTimKiem.Text);
-            if (tv != null)
-            {
-                lvThanhVien.Items.Clear();
-               ListViewItem li= lvThanhVien.Items.Add(tv.matv);
-                li.SubItems.Add(tv.hoten);
-                li.SubItems.Add(tv.gioitinh.ToString());
-                li.SubItems.Add(tv.diachi);
-                li.SubItems.Add(tv.sdt);
-                li.SubItems.Add(tv.smnd);
-                li.SubItems.Add(tv.mail);
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy thông tin thành viên!!!!!");
-            }
-        }
-
-        private void btnTaoPhieu_Click(object sender, EventArgs e)
-        {
-            foreach(ListViewItem li in lvThanhVien.SelectedItems)
-            {
-                ThanhVien tv = db.ThanhVien.Find(li.SubItems[0].Text);
-                this.Hide();
-                frmChiTietPhieuMuon phieu = new frmChiTietPhieuMuon(tv);
-                phieu.ShowDialog();
-            }
-            
-        }
-
-        private void frmThanhVien_Load(object sender, EventArgs e)
+         private void frmThanhVien_Load(object sender, EventArgs e)
         {
             hienthi();
             
@@ -102,57 +55,6 @@ namespace demoQuanLyThuVien
             }
         }
         
-
-        private void lvThanhVien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            foreach(ListViewItem li in lvThanhVien.SelectedItems)
-            {
-                txtTimKiem.Text = li.SubItems[0].Text;
-            }
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmChiTietThanhVien thanhVien = new frmChiTietThanhVien();
-            thanhVien.ShowDialog();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            ThanhVien tv;
-            foreach(ListViewItem li in lvThanhVien.SelectedItems)
-            {
-                tv = db.ThanhVien.Find(li.SubItems[0].Text);
-                frmChiTietThanhVien thanhVien = new frmChiTietThanhVien(tv);
-                this.Hide();
-                thanhVien.ShowDialog();
-
-            }
-            
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            bool kq = false;
-            foreach (ListViewItem li in lvThanhVien.SelectedItems)
-            {
-                kq = true;
-                ThanhVien tv = db.ThanhVien.Find(li.SubItems[0].Text);
-                if (tv != null)
-                {
-                    if (tv.PhieuMuonSach.Count == 0)
-                        db.ThanhVien.Remove(tv);
-                    else
-                        MessageBox.Show("Không thể xóa được!!!!!");
-                }
-                db.SaveChanges();
-            }
-            if (kq)
-            {
-                hienthi();
-            }
-        }
+        
     }
 }
