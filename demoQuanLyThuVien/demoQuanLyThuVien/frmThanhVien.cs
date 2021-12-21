@@ -54,7 +54,20 @@ namespace demoQuanLyThuVien
                 li.SubItems.Add(tv.mail);
             }
         }
-        
+         private void lvThanhVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(ListViewItem li in lvThanhVien.SelectedItems)
+            {
+                txtTimKiem.Text = li.SubItems[0].Text;
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmChiTietThanhVien thanhVien = new frmChiTietThanhVien();
+            thanhVien.ShowDialog();
+        }
         
     }
 }
