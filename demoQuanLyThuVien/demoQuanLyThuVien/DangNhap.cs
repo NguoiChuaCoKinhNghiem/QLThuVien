@@ -18,7 +18,7 @@ namespace demoQuanLyThuVien
             txtPassword.Text = "";
             txtPassword.PasswordChar = '*';
         }
-        String user = "ngothuythuong.dacn";
+       String user = "ngothuythuong.dacn";
         String pass = "123456789";
 
         private void button1_Click(object sender, EventArgs e)
