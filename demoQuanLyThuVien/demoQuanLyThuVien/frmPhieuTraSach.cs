@@ -18,7 +18,7 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
-        private void frmPhieuTraSach_Load(object sender, EventArgs e)
+ private void frmPhieuTraSach_Load(object sender, EventArgs e)
         {
             hienthi();
             khoitao();
@@ -52,7 +52,8 @@ namespace demoQuanLyThuVien
             cboTT.Items.Add("Trả trễ hạn!!!!!!!!!!!!");
             cboTT.SelectedIndex = 0;
         }
-		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (ListViewItem li in listView1.SelectedItems)
             {
@@ -78,7 +79,8 @@ namespace demoQuanLyThuVien
             frmPhieuMuonSach pm = new frmPhieuMuonSach();
             pm.ShowDialog();
         }
-		private void btnSửa_Click(object sender, EventArgs e)
+
+        private void btnSửa_Click(object sender, EventArgs e)
         {
             PhieuTraSach pt = db.PhieuTraSach.Find(txtMaPhieuTra.Text);
             if (pt != null)
@@ -130,5 +132,6 @@ namespace demoQuanLyThuVien
             txtMaPhieuMuon.Text = pm.maphieumuon;
             
         }
+        
     }
 }
