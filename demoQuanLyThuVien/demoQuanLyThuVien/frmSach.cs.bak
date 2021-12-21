@@ -20,7 +20,24 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
-
+		public frmSach(ThanhVien tv)
+        {
+            this.tv = tv;
+            InitializeComponent();
+        }
+        public frmSach(PhieuMuonSach pm, ThanhVien tv)
+        {
+            this.tv = tv;
+            this.pm = pm;
+            InitializeComponent();
+        }
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQLSach ql = new frmQLSach();
+            ql.ShowDialog();
+        }
+		
         
     }
 }
