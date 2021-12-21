@@ -18,8 +18,7 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
-
-        private void frmPhieuTraSach_Load(object sender, EventArgs e)
+ private void frmPhieuTraSach_Load(object sender, EventArgs e)
         {
             hienthi();
             khoitao();
@@ -133,5 +132,6 @@ namespace demoQuanLyThuVien
             txtMaPhieuMuon.Text = pm.maphieumuon;
             
         }
+        
     }
 }

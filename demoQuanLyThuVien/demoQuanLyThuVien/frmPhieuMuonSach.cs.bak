@@ -20,6 +20,7 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
          private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -97,5 +98,9 @@ namespace demoQuanLyThuVien
             }
         }
         }
+=======
+        
+        
+>>>>>>> main
     }
 }
