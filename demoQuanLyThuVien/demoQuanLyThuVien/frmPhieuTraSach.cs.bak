@@ -18,7 +18,11 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
+        private void frmPhieuTraSach_Load(object sender, EventArgs e)
+=======
  private void frmPhieuTraSach_Load(object sender, EventArgs e)
+>>>>>>> main
         {
             hienthi();
             khoitao();
@@ -42,6 +46,19 @@ namespace demoQuanLyThuVien
                 li.SubItems.Add(pt.ngaytra.Value.ToString("dd/MM/yyyy"));
                 li.SubItems.Add(pt.tinhtrang);
                 li.SubItems.Add(pt.tienphat.ToString());
+<<<<<<< HEAD
+
+            }
+        }
+        public void khoitao()
+        {
+            cboTT.Items.Clear();
+            cboTT.Items.Add("Trả đúng hạn!!!!!!");
+            cboTT.Items.Add("Trả trễ hạn!!!!!!!!!!!!");
+            cboTT.SelectedIndex = 0;
+        }
+		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+=======
 
             }
         }
@@ -54,6 +71,7 @@ namespace demoQuanLyThuVien
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+>>>>>>> main
         {
             foreach (ListViewItem li in listView1.SelectedItems)
             {
@@ -79,8 +97,12 @@ namespace demoQuanLyThuVien
             frmPhieuMuonSach pm = new frmPhieuMuonSach();
             pm.ShowDialog();
         }
+<<<<<<< HEAD
+		private void btnSửa_Click(object sender, EventArgs e)
+=======
 
         private void btnSửa_Click(object sender, EventArgs e)
+>>>>>>> main
         {
             PhieuTraSach pt = db.PhieuTraSach.Find(txtMaPhieuTra.Text);
             if (pt != null)
@@ -132,6 +154,9 @@ namespace demoQuanLyThuVien
             txtMaPhieuMuon.Text = pm.maphieumuon;
             
         }
+<<<<<<< HEAD
+=======
         
+>>>>>>> main
     }
 }
