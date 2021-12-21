@@ -20,7 +20,12 @@ namespace demoQuanLyThuVien
         {
             InitializeComponent();
         }
-        
+         private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangChu tc = new TrangChu();
+            tc.ShowDialog();
+        }
         
     }
 }
