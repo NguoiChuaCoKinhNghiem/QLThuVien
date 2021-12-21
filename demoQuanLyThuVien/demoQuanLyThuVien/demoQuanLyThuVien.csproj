@@ -121,16 +121,6 @@
     <Compile Include="frmTacGia.Designer.cs">
       <DependentUpon>frmTacGia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\DauSach.cs" />
-    <Compile Include="Model\ModelThuVien.cs" />
-    <Compile Include="Model\NgonNgu.cs" />
-    <Compile Include="Model\NhaXuatBan.cs" />
-    <Compile Include="Model\PhieuMuonSach.cs" />
-    <Compile Include="Model\PhieuTraSach.cs" />
-    <Compile Include="Model\Sach.cs" />
-    <Compile Include="Model\TacGia.cs" />
-    <Compile Include="Model\ThanhVien.cs" />
-    <Compile Include="Model\TheLoai.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmSach.cs">
@@ -232,6 +222,8 @@
   <ItemGroup>
     <None Include="Resources\thumbpowerbuttoniconsymbolofstartorturnonvector-dd6d8c94.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
