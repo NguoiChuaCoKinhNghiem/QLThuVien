@@ -17,6 +17,46 @@ namespace demoQuanLyThuVien
             InitializeComponent();
         }
 
-        
+        private void btnttSach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSach sach = new frmSach();
+            sach.ShowDialog();
+        }
+
+        private void btntacgia_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTacGia tg = new frmTacGia();
+            tg.ShowDialog();
+        }
+
+        private void btnLoaiSach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLoaiSach ls = new frmLoaiSach();
+            ls.ShowDialog();
+        }
+
+        private void btnNXB_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNhaXuatBan nxb = new frmNhaXuatBan();
+            nxb.ShowDialog();
+        }
+
+        private void btnDauSach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDauSach ds = new frmDauSach();
+            ds.ShowDialog();
+        }
+
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangChu tc = new TrangChu();
+            tc.ShowDialog();
+        }
     }
 }
