@@ -74,5 +74,28 @@ namespace demoQuanLyThuVien
                 txtTimKiem.Text = li.SubItems[0].Text;
             }
         }
+		private void btnTaoPhieuTra_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem li in listView1.SelectedItems)
+            {
+                PhieuMuonSach pm = db.PhieuMuonSach.Find(li.SubItems[0].Text);
+                this.Hide();
+                frmPhieuTraSach ptra = new frmPhieuTraSach(pm);
+                ptra.ShowDialog();
+            }
+            
+        }
+
+        private void btnSuaPhieu_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem li in listView1.SelectedItems)
+            {
+                PhieuMuonSach pm = db.PhieuMuonSach.Find(li.SubItems[0].Text);
+                frmChiTietPhieuMuon ctpm = new frmChiTietPhieuMuon(pm);
+                this.Hide();
+                ctpm.ShowDialog();
+            }
+        
+        }
     }
 }
