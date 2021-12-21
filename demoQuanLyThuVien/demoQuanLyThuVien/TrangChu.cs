@@ -43,5 +43,11 @@ namespace demoQuanLyThuVien
             frmQLSach ql = new frmQLSach();
             ql.ShowDialog();
         }
+		private void btnPhieuMuonSach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPhieuMuonSach phieumuon = new frmPhieuMuonSach();
+            phieumuon.ShowDialog();
+        }
     }
 }

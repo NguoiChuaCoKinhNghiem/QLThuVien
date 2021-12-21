@@ -29,6 +29,19 @@ namespace demoQuanLyThuVien
             {
                 txtDate.Text = date;
             }
+			
+        }
+		 private void btnThanhVien_Click(object sender, EventArgs e)
+			{
+            this.Hide();
+            frmThanhVien thanhVien = new frmThanhVien();
+            thanhVien.ShowDialog();
+			}
+		 private void btnSach_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmQLSach ql = new frmQLSach();
+            ql.ShowDialog();
         }
     }
 }
