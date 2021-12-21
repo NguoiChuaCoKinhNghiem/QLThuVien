@@ -55,6 +55,37 @@ namespace demoQuanLyThuVien
             }
 
         }
+		private void frmSach_Load(object sender, EventArgs e)
+        {
+            hienthi();
+        }
+        public void hienthi()
+        {
+            listView1.View = View.Details;
+            listView1.GridLines = true;
+            listView1.FullRowSelect = true;
+            listView1.Items.Clear();
+            listView1.Columns.Clear();
+            listView1.Columns.Add("Mã sách", 80);
+            listView1.Columns.Add("Tên sách", 250);
+            listView1.Columns.Add("Đầu sách", 100);
+            listView1.Columns.Add("Loại sách", 100);
+            listView1.Columns.Add("Tác giả", 80);
+            listView1.Columns.Add("Ngôn ngữ", 80);
+            listView1.Columns.Add("NXB", 100);
+            listView1.Columns.Add("Tình trạng", 80);
+            foreach(Sach s in db.Sach.ToList())
+            {
+                ListViewItem li = listView1.Items.Add(s.masach);
+                li.SubItems.Add(s.tensach);
+                li.SubItems.Add(s.dausach);
+                li.SubItems.Add(s.loaisach);
+                li.SubItems.Add(s.tacgia);
+                li.SubItems.Add(s.ngonngu);
+                li.SubItems.Add(s.nhaxuatban);
+                li.SubItems.Add(s.tinhtrang);
+            }
+        }
         
     }
 }
