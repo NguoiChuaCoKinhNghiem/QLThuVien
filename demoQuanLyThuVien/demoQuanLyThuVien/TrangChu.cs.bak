@@ -20,6 +20,15 @@ namespace demoQuanLyThuVien
 
         }
 
-        
+         private void txtDate_TextChanged(object sender, EventArgs e)
+        {
+            
+            String date = DateTime.Today.Date.ToString("dd/MM/yyyy") + " " + DateTime.Now.ToString("HH:mm");
+            
+            if (String.Compare(txtDate.Text, date,true)!=0)
+            {
+                txtDate.Text = date;
+            }
+        }
     }
 }
