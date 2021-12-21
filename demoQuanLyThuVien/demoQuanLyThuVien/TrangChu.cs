@@ -49,5 +49,16 @@ namespace demoQuanLyThuVien
             frmPhieuMuonSach phieumuon = new frmPhieuMuonSach();
             phieumuon.ShowDialog();
         }
+		private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPhieuTra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPhieuTraSach pt = new frmPhieuTraSach();
+            pt.ShowDialog();
+        }
     }
 }
