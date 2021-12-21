@@ -86,6 +86,50 @@ namespace demoQuanLyThuVien
                 li.SubItems.Add(s.tinhtrang);
             }
         }
+		private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            
+            DauSach ds = db.DauSach.Find(txtTimKiem.Text);
+            if(ds!=null)
+            {
+                listView1.Items.Clear();
+                foreach (Sach s in db.Sach.ToList())
+                {
+                    if (s.dausach == ds.mads)
+                    {
+                        
+                        ListViewItem li = listView1.Items.Add(s.masach);
+                        li.SubItems.Add(s.tensach);
+                        li.SubItems.Add(s.dausach);
+                        li.SubItems.Add(s.loaisach);
+                        li.SubItems.Add(s.tacgia);
+                        li.SubItems.Add(s.ngonngu);
+                        li.SubItems.Add(s.nhaxuatban);
+                        li.SubItems.Add(s.tinhtrang);
+                    }
+                }
+                
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(ListViewItem li in listView1.SelectedItems)
+            {
+                txtTimKiem.Text = li.SubItems[2].Text;
+            }
+        }
+
+        private void btnHoantat_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem li in listView1.SelectedItems)
+            {
+                Sach s = db.Sach.Find(li.SubItems[0].Text);
+                frmChiTietPhieuMuon phiuemuon = new frmChiTietPhieuMuon(pm,tv,s);
+                this.Hide();
+                phiuemuon.ShowDialog();
+            }
+        }
         
     }
 }
